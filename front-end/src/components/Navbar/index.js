@@ -53,11 +53,12 @@ export const Navbar = ( { toggle }) => {
                 <NavLinks to='about' smooth = {true} duration = {500} spy={true} exact = 'true' offset = {-80} activeClass='active'>
                     About</NavLinks>
                 </NavItem>
-            <NavItem>
-                <NavLinks to='services' smooth = {true} duration = {500} spy={true} exact = 'true' offset = {-80} activeClass='active'>Services</NavLinks>
-            </NavItem>
+         
             <NavItem>
                 <NavLinks to='reservation' smooth = {true} duration = {500} spy={true} exact = 'true' offset = {-80} activeClass='active'>Reservation</NavLinks>
+            </NavItem>
+            <NavItem>
+                <NavLinks to='services' smooth = {true} duration = {500} spy={true} exact = 'true' offset = {-80} activeClass='active'>Nos Offres</NavLinks>
             </NavItem>
             </NavMenu>
             <NavBtn>

@@ -2,14 +2,20 @@ import React, {useState} from 'react';
 import "./Form.css"
 import {Button} from '../ButtonElements';
 import {InfoContainer,InfoWrapper,Heading, InfoRow, Column1, TextWrapper , BtnWrap, Column2 , ImgWrap , Subtitle, Img } from './FormElements';
+import TimePicker from 'react-time-picker';
+
+
+
 
 const Form = ({lightBg,id,imgStart,topLine,lightText,darkText,description,buttonLabel,img,alt,heading,headline, primary, dark , dark2 }) => {
-   
     const [missingInputs,setMissingInput] = useState(false);
+    const [value, onChange] = useState('10:00');
     const [success,setsuccess] = useState(false);
     const [formData, setformData] = useState({
         name: "",
         phoneNumber: "",
+        startAdress : "",
+        endAdress : "",
         
       });
     
@@ -28,6 +34,7 @@ if (formData.name === "" || formData.phoneNumber ==="") {
 
 }
     }
+    
 
 
 
@@ -48,12 +55,27 @@ if (formData.name === "" || formData.phoneNumber ==="") {
                  
           <form action="/">
             <div className="title">
-              <h2>Register here</h2>
+              <h2>Réservez Maintenant</h2>
             </div>
             <div className="info">
               <input className="fname" type="text" name="name" placeholder="Full name" onChange ={handleChange}/>
               <input type="text" name="phoneNumber" placeholder="Phone number" onChange ={handleChange}/>
+           
+                <div className="tripData">
+                <input  type="text" name="startAdress" placeholder="Start Adress" onChange ={handleChange} />
+                <input  type="text" name="endAdress" placeholder="end Adress" onChange ={handleChange} />
+            
+                <TimePicker
+        onChange={onChange}
+        value={value}
+      />{console.log(value)}
+                 <div>
   
+  
+               
+                 
+                </div>
+               </div>
             </div>
             <div className="checkbox">
                 
@@ -72,7 +94,7 @@ if (formData.name === "" || formData.phoneNumber ==="") {
                                   primary = {primary ? 1 : 0}
                                   dark={dark ? 1 : 0}
                                   dark2={dark2 ? 1 : 0}
-                                  >{buttonLabel}</Button>
+                                  >confirmer</Button>
                               </BtnWrap>
           </form>
 

@@ -21,7 +21,7 @@ const HeroSection = () => {
                 Indiquez votre destination, confirmez votre course, rencontrez votre chauffeur et profitez du trajet !
                 </HeroP>
                 <HeroBtnWrapper>
-                    <Button to="signup" onMouseEnter = {onHover} onMouseLeave = {onHover}
+                    <Button to='reservation' onMouseEnter = {onHover} onMouseLeave = {onHover}
                     primary = "true"
                     dark = "true"
                     smooth = {true} duration = {500} spy={true} exact = 'true' offset = {-80} activeClass='active'

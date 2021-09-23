@@ -1,8 +1,13 @@
 import React from 'react';
 import {SidebarContainer,Icon,CloseIcon,SidebarWrapper,SidebarMenu, SidebarLink , SideBtnWrap , SidebarRoute } from './SidebarElements';
+import {animateScroll as scroll} from 'react-scroll';
 
 
 const Sidebar = ({isOpen, toggle}) => {
+    const toggleHome = () => {
+        scroll.scrollToTop();
+        toggle()
+    }
     return (
         <SidebarContainer isOpen = {isOpen} onClick= {toggle}>
             <Icon  onClick= {toggle}> 
@@ -10,21 +15,21 @@ const Sidebar = ({isOpen, toggle}) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                <SidebarLink to="about" onClick = {toggle}>
-                        About
+                <SidebarLink to="/" onClick = {toggleHome }>
+                Home
                     </SidebarLink>
-                    <SidebarLink to="discover" onClick = {toggle}>
-                        Discover
+                    <SidebarLink to="about" onClick = {toggle}>
+                    About
+                    </SidebarLink>
+                    <SidebarLink to="reservation" onClick = {toggle}>
+                    Reservation
                     </SidebarLink>
                     <SidebarLink to="services" onClick = {toggle}>
-                        Services
-                    </SidebarLink>
-                    <SidebarLink to="signup" onClick = {toggle}>
-                        Sign Up
+                    Nos Offres
                     </SidebarLink>
                 </SidebarMenu>
                 <SideBtnWrap>
-                    <SidebarRoute to="/signin" onClick = {toggle}>Sign In</SidebarRoute>
+                  
                 </SideBtnWrap>
             </SidebarWrapper>
         </SidebarContainer>
